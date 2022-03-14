@@ -21,11 +21,17 @@ app.get('/', function (req, res) {
     console.log("connection received");
 });
 
+httpApp.get('/', function (req, res) {
+    res.sendFile(__dirname+'/index.html');
+    console.log("connection received");
+});
+
+
 //http server
 
 var server = httpApp.listen(80, function () {
     console.log('Node server is running..');
-    res.redirect("https://" + req.headers.host + "/" + req.path);
+    //res.redirect("https://" + req.headers.host + "/" + req.path);
 });
 
 //https server
